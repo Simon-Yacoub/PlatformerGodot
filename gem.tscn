@@ -57,6 +57,6 @@ position = Vector2(0, 4.76837e-07)
 scale = Vector2(1.56667, 1.73077)
 sprite_frames = SubResource("SpriteFrames_pfy1d")
 animation = &"Idle"
-frame_progress = 0.914224
+frame_progress = 0.116317
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
