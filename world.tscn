@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqasn4exiqv0j"]
+[gd_scene load_steps=14 format=3 uid="uid://cqasn4exiqv0j"]
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_7rb1u"]
 [ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player/Player.tscn" id="1_j1hj7"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Gold.gd" id="6_v1iqk"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="7_haiai"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="8_3rr8d"]
+[ext_resource type="PackedScene" uid="uid://dvsymjw7omsx8" path="res://coin.tscn" id="8_h20g6"]
+[ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="10_qcfym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on0lp"]
 texture = ExtResource("1_7rb1u")
@@ -419,6 +421,20 @@ texture = ExtResource("1_7rb1u")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_on0lp")
 
+[sub_resource type="GDScript" id="GDScript_23uux"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Gems: \" + str(Game.Gems)
+"
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -478,11 +494,18 @@ theme_override_font_sizes/font_size = 28
 text = "Goldplaceholder"
 script = ExtResource("6_v1iqk")
 
+[node name="Gems" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 237.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Gemsplaceholder"
+script = SubResource("GDScript_23uux")
+
 [node name="Collectables" type="Node2D" parent="."]
 position = Vector2(928, 240)
-
-[node name="Cherry3" parent="Collectables" instance=ExtResource("7_haiai")]
-position = Vector2(-168, -80)
 
 [node name="Cherry4" parent="Collectables" instance=ExtResource("7_haiai")]
 position = Vector2(-56, -144)
@@ -517,5 +540,17 @@ position = Vector2(-888, 168)
 [node name="Cherry2" parent="Collectables" instance=ExtResource("7_haiai")]
 position = Vector2(-528, 120)
 
+[node name="Coin" parent="Collectables" instance=ExtResource("8_h20g6")]
+position = Vector2(-744, 128)
+
+[node name="Coin2" parent="Collectables" instance=ExtResource("8_h20g6")]
+position = Vector2(-296, -16)
+
+[node name="Coin3" parent="Collectables" instance=ExtResource("8_h20g6")]
+position = Vector2(-168, -80)
+
 [node name="Gate" parent="." instance=ExtResource("8_3rr8d")]
 position = Vector2(2216, 432)
+
+[node name="Gem" parent="." instance=ExtResource("10_qcfym")]
+position = Vector2(312, 392)
