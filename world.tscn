@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_7rb1u"]
 [ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player/Player.tscn" id="1_j1hj7"]
-[ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Frog.tscn" id="1_uxaq3"]
+[ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="1_uxaq3"]
 [ext_resource type="PackedScene" uid="uid://ccjaovvgubtgs" path="res://Background.tscn" id="2_rbpw8"]
 [ext_resource type="Script" path="res://HP.gd" id="5_ydew5"]
 [ext_resource type="Script" path="res://Gold.gd" id="6_v1iqk"]

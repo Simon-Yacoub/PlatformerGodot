@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://wamv3a21vpju"]
 
+[ext_resource type="Script" path="res://Enemies/Frog.gd" id="1_ojwf4"]
 [ext_resource type="Texture2D" uid="uid://d0t0edra0t0mp" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png" id="1_phe85"]
-[ext_resource type="Script" path="res://Frog.gd" id="1_xvkqw"]
 [ext_resource type="Texture2D" uid="uid://d07ylk4mr7iay" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/frog-jump.png" id="2_4w1w3"]
 [ext_resource type="Texture2D" uid="uid://mwt526dv7r11" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/enemy-deadth.png" id="2_of1wo"]
 
@@ -127,7 +127,7 @@ size = Vector2(16, 17)
 size = Vector2(25.5, 11)
 
 [node name="Frog" type="CharacterBody2D"]
-script = ExtResource("1_xvkqw")
+script = ExtResource("1_ojwf4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
