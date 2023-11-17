@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://crs36qqehxony"]
+
+[ext_resource type="Script" path="res://Gate.gd" id="1_e48j2"]
+[ext_resource type="Texture2D" uid="uid://iu3eq1r16pco" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/door.png" id="2_pr6gl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcnue"]
+size = Vector2(20, 32)
+
+[node name="Gate" type="Area2D"]
+script = ExtResource("1_e48j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xcnue")
+
+[node name="Door" type="Sprite2D" parent="."]
+texture = ExtResource("2_pr6gl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
