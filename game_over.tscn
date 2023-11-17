@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh57nmn40vybm"]
+
+[ext_resource type="Texture2D" uid="uid://dy3a6u633d3jt" path="res://Resources/GameOverBackground.png" id="1_6x36m"]
+[ext_resource type="Texture2D" uid="uid://q0whn2t8olvp" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/skulls.png" id="2_rsspu"]
+[ext_resource type="Texture2D" uid="uid://r5o57urlk2h6" path="res://Resources/sign.png" id="3_2pmum"]
+
+[sub_resource type="Theme" id="Theme_jra6q"]
+
+[sub_resource type="GDScript" id="GDScript_iqma4"]
+script/source = "extends Button
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://world.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_pho2n"]
+script/source = "extends Button
+
+func _on_pressed():
+	get_tree().quit()
+"
+
+[node name="Game Over" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="GameOverBackground" type="Sprite2D" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(557.5, 316)
+scale = Vector2(0.94062, 0.81)
+texture = ExtResource("1_6x36m")
+
+[node name="Skulls" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(232, 512)
+scale = Vector2(28, 29.3)
+texture = ExtResource("2_rsspu")
+
+[node name="Skulls2" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(944, 520)
+scale = Vector2(23.5, 26.1)
+texture = ExtResource("2_rsspu")
+flip_h = true
+
+[node name="Sign" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(584, 416)
+scale = Vector2(26.7222, 22)
+texture = ExtResource("3_2pmum")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+offset_left = 296.0
+offset_top = 24.0
+offset_right = 872.0
+offset_bottom = 200.0
+theme = SubResource("Theme_jra6q")
+theme_override_font_sizes/normal_font_size = 105
+text = "Game Over"
+
+[node name="Play" type="Button" parent="."]
+modulate = Color(0, 1, 1, 1)
+offset_left = 136.0
+offset_top = 200.0
+offset_right = 464.0
+offset_bottom = 400.0
+text = "Play Again"
+script = SubResource("GDScript_iqma4")
+
+[node name="Quit" type="Button" parent="."]
+modulate = Color(1, 0, 1, 1)
+offset_left = 672.0
+offset_top = 200.0
+offset_right = 992.0
+offset_bottom = 392.0
+text = "Quit"
+script = SubResource("GDScript_pho2n")
+
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

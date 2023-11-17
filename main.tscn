@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlie2606kmcr2"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qugje"]
+[ext_resource type="Texture2D" uid="uid://lfc4vkdcr6wn" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_1w7hi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qugje")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 399.0
+offset_top = 80.0
+offset_right = 744.0
+offset_bottom = 295.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 396.0
+offset_top = 324.0
+offset_right = 743.0
+offset_bottom = 471.0
+tooltip_text = "This is the quit button
+"
+text = "Quit"
+
+[node name="Back" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(575, 325)
+scale = Vector2(2.97917, 2.675)
+texture = ExtResource("2_1w7hi")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
