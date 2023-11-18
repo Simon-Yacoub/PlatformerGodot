@@ -37,7 +37,7 @@ func _on_player_detection_body_exited(body):
 		chase = false
 
 
-func _on_player_death_body_entered(body):
+func _on_player_Head_Hurt_Box_entered(body):
 	if body.name == "Player":
 		death()
 
@@ -48,9 +48,10 @@ func _on_player_collision_body_entered(body):
 		death()
 
 func death():
-	Game.Gold += 5
 	Utils.saveGame()
-	chase = false
-	get_node("AnimatedSprite2D").play("Death")
+	chase = false	
+	get_node("CollisionShape2D").set_deferred("disabled", true)	
+	gravity = 0	
+	get_node("AnimatedSprite2D").play("Death")	
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()

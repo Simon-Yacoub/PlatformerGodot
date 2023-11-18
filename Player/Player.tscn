@@ -306,4 +306,4 @@ libraries = {
 }
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(6, 7)
+position = Vector2(0, -1)

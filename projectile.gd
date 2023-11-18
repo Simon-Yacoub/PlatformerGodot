@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 350
+var speed = 450
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
@@ -12,8 +12,9 @@ func _physics_process(delta):
 		position += -1 * transform.x * speed * delta
 
 func _on_body_entered(body):
-	var name = body.name.substr(0, 4)
-	if name == "Frog":
+	if body.name == "TileMap":
+		queue_free()
+	if body.name.substr(0, 4) == "Frog":
 		body.death()
 		queue_free()
 	
