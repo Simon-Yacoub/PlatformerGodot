@@ -23,8 +23,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = true
+		$Muzzle.set_rotation_degrees(180)
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
+		$Muzzle.set_rotation_degrees(0)
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -33,15 +35,20 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
 			anim.play("Idle")
+			
 	if velocity.y > 0:
 		anim.play("Fall")
-			
+		
+	if Input.is_action_just_pressed("ui_up"):
+		var p = preload("res://projectile.tscn").instantiate()
+		owner.add_child(p)
+		p.transform = $Muzzle.global_transform
+				
 	if Game.PlayerHp <= 0 || position.y > LOWER_LIMIT:
 		playerDeath()
 	else: 
 		move_and_slide()
-	
-	
+		
 func playerDeath():	
 	anim.play("Death")
 	velocity.y = JUMP_VELOCITY

@@ -304,3 +304,6 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_3nv4u")
 }
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(6, 7)
