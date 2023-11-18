@@ -50,7 +50,8 @@ func _on_player_collision_body_entered(body):
 func death():
 	Utils.saveGame()
 	chase = false	
-	get_node("CollisionShape2D").set_deferred("disabled", true)	
+	$CollisionShape2D.queue_free() 
+	$PlayerCollision.queue_free() 
 	gravity = 0	
 	get_node("AnimatedSprite2D").play("Death")	
 	await get_node("AnimatedSprite2D").animation_finished
