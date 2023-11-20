@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://d30xvhhnd7n1g"]
+
+[ext_resource type="Script" path="res://level_select.gd" id="1_07714"]
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_07714")
+
+[node name="Level1" type="Button" parent="."]
+offset_left = 118.0
+offset_top = 78.0
+offset_right = 276.0
+offset_bottom = 215.0
+text = "Lv.1"
+
+[node name="Level2" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 81.0
+offset_right = 532.0
+offset_bottom = 218.0
+text = "Lv.2"
+
+[node name="Level3" type="Button" parent="."]
+offset_left = 623.0
+offset_top = 86.0
+offset_right = 781.0
+offset_bottom = 223.0
+text = "Lv.3"
+
+[node name="Level4" type="Button" parent="."]
+offset_left = 870.0
+offset_top = 83.0
+offset_right = 1028.0
+offset_bottom = 220.0
+text = "Lv.4"
+
+[node name="Level5" type="Button" parent="."]
+offset_left = 117.0
+offset_top = 268.0
+offset_right = 275.0
+offset_bottom = 405.0
+
+[node name="Level6" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 268.0
+offset_right = 542.0
+offset_bottom = 405.0
+
+[node name="Level7" type="Button" parent="."]
+offset_left = 646.0
+offset_top = 268.0
+offset_right = 804.0
+offset_bottom = 405.0
+
+[node name="Level8" type="Button" parent="."]
+offset_left = 878.0
+offset_top = 275.0
+offset_right = 1036.0
+offset_bottom = 412.0
+
+[node name="Level9" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 452.0
+offset_right = 274.0
+offset_bottom = 589.0
+
+[node name="Level10" type="Button" parent="."]
+offset_left = 378.0
+offset_top = 442.0
+offset_right = 536.0
+offset_bottom = 579.0
+
+[node name="Level11" type="Button" parent="."]
+offset_left = 635.0
+offset_top = 444.0
+offset_right = 793.0
+offset_bottom = 581.0
+
+[node name="Level12" type="Button" parent="."]
+offset_left = 879.0
+offset_top = 457.0
+offset_right = 1037.0
+offset_bottom = 594.0
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]

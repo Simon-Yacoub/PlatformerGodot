@@ -13,20 +13,28 @@ offset_right = 744.0
 offset_bottom = 295.0
 text = "Play"
 
+[node name="LevelSelect" type="Button" parent="."]
+offset_left = 398.0
+offset_top = 312.0
+offset_right = 742.0
+offset_bottom = 419.0
+text = "Level Select"
+
 [node name="Quit" type="Button" parent="."]
-offset_left = 396.0
-offset_top = 324.0
-offset_right = 743.0
-offset_bottom = 471.0
+offset_left = 395.0
+offset_top = 450.0
+offset_right = 742.0
+offset_bottom = 597.0
 tooltip_text = "This is the quit button
 "
 text = "Quit"
 
 [node name="Back" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(575, 325)
+position = Vector2(571, 325)
 scale = Vector2(2.97917, 2.675)
 texture = ExtResource("2_1w7hi")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
