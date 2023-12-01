@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qriqgydjcawb"]
+[gd_scene load_steps=8 format=3 uid="uid://qriqgydjcawb"]
 
 [ext_resource type="Texture2D" uid="uid://bepr3cg3wkcfr" path="res://Resources/LevelComplete.png" id="1_xa2ly"]
 [ext_resource type="Script" path="res://HighScore.gd" id="2_fhle0"]
@@ -35,14 +35,6 @@ func _on_pressed():
 	Game.Level = 1
 	Game.resetPlayerStats()
 	get_tree().change_scene_to_file(\"res://main.tscn\")
-"
-
-[sub_resource type="GDScript" id="GDScript_r8xlb"]
-script/source = "extends Button
-
-func _on_pressed():
-	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://level\" + str(Game.Level) + \".tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_byxfw"]
@@ -83,15 +75,6 @@ theme_override_font_sizes/font_size = 30
 text = "Your Time: "
 script = SubResource("GDScript_ra7uy")
 
-[node name="HighScore" type="Label" parent="."]
-offset_left = 664.0
-offset_top = 152.0
-offset_right = 817.0
-offset_bottom = 197.0
-theme_override_font_sizes/font_size = 30
-text = "Highscore:"
-script = ExtResource("2_fhle0")
-
 [node name="LevelCompleteMsg" type="Label" parent="."]
 offset_left = 184.0
 offset_top = -16.0
@@ -106,26 +89,27 @@ text = "Level Complete!"
 [node name="Next" type="Button" parent="."]
 offset_left = 88.0
 offset_top = 368.0
-offset_right = 352.0
+offset_right = 472.0
 offset_bottom = 592.0
 text = "Next Level"
 script = SubResource("GDScript_oexip")
 
 [node name="Main" type="Button" parent="."]
-offset_left = 768.0
-offset_top = 368.0
-offset_right = 1040.0
-offset_bottom = 592.0
+offset_left = 672.0
+offset_top = 376.0
+offset_right = 1056.0
+offset_bottom = 600.0
 text = "Main Menu"
 script = SubResource("GDScript_s36fl")
 
-[node name="PlayAgain" type="Button" parent="."]
-offset_left = 408.0
-offset_top = 376.0
-offset_right = 728.0
-offset_bottom = 592.0
-text = "Play Again"
-script = SubResource("GDScript_r8xlb")
+[node name="HighScore" type="Label" parent="."]
+offset_left = 664.0
+offset_top = 152.0
+offset_right = 817.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 30
+text = "Highscore:"
+script = ExtResource("2_fhle0")
 
 [node name="Gems" type="Node2D" parent="."]
 script = SubResource("GDScript_byxfw")
@@ -147,4 +131,3 @@ texture = ExtResource("2_trfuv")
 
 [connection signal="pressed" from="Next" to="Next" method="_on_pressed"]
 [connection signal="pressed" from="Main" to="Main" method="_on_pressed"]
-[connection signal="pressed" from="PlayAgain" to="PlayAgain" method="_on_pressed"]
