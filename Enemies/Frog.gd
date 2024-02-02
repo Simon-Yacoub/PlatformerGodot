@@ -44,11 +44,11 @@ func _on_player_Head_Hurt_Box_entered(body):
 
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
-		Game.PlayerHp -= 3
+		Game.PlayerHp -= 1
+		Utils.saveGame()
 		death()
 
-func death():
-	Utils.saveGame()
+func death():	
 	chase = false	
 	$CollisionShape2D.queue_free() 
 	$PlayerCollision.queue_free() 

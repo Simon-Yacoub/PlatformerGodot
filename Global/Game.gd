@@ -1,13 +1,13 @@
 extends Node
 
 var Level = 1
-var PlayerHp = 10
+var PlayerHp = 3
 var Gold = 0
 var Gems = 0
 var TimeElapsed := 0.0
 
 func resetPlayerStats():
-	PlayerHp = 10
+	PlayerHp = 3
 	Gold = 0
 	Gems = 0
 	TimeElapsed = 0.0

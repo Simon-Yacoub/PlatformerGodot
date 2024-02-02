@@ -9,8 +9,12 @@ func _on_quit_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://level1.tscn")
+	Game.resetPlayerStats()
+	get_tree().change_scene_to_file("res://Levels/level1.tscn")
 
 
 func _on_level_select_pressed():
 	get_tree().change_scene_to_file("res://level_select.tscn")
+
+func _on_record_book_pressed():
+	get_tree().change_scene_to_file("res://record_book.tscn")

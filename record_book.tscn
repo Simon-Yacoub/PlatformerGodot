@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmyshmuuc05yr"]
+
+[ext_resource type="Texture2D" uid="uid://bepr3cg3wkcfr" path="res://Resources/LevelComplete.png" id="1_mja4g"]
+[ext_resource type="Script" path="res://records.gd" id="2_lshxl"]
+
+[sub_resource type="GDScript" id="GDScript_s36fl"]
+script/source = "extends Button
+
+func _on_pressed():
+	Game.Level = 1
+	Game.resetPlayerStats()
+	get_tree().change_scene_to_file(\"res://main.tscn\")
+"
+
+[node name="LevelComplete" type="Node2D"]
+
+[node name="LevelCompleteBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 304)
+scale = Vector2(0.988812, 0.79)
+texture = ExtResource("1_mja4g")
+
+[node name="LevelCompleteMsg" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 872.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 105
+text = "Records"
+
+[node name="Main" type="Button" parent="."]
+offset_left = 752.0
+offset_top = 384.0
+offset_right = 1080.0
+offset_bottom = 600.0
+text = "Main Menu"
+script = SubResource("GDScript_s36fl")
+
+[node name="records" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 200.0
+offset_right = 496.0
+offset_bottom = 408.0
+script = ExtResource("2_lshxl")
+
+[connection signal="pressed" from="Main" to="Main" method="_on_pressed"]

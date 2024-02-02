@@ -10,7 +10,7 @@ func saveGame():
 		"Gold": Game.Gold		
 	}
 	var jstr = JSON.stringify(data)
-	file.store_line(jstr)
+	file.store_line(jstr) 
 	file.close()
 
 func loadGame():
@@ -52,7 +52,13 @@ func saveTime():
 				for x in Game.Level - 1:
 					current_line = JSON.parse_string(file.get_line())									
 					file.store_line(jstr)
-			file.close()					
+			file.close()
+	else:
+		file = FileAccess.open(HIGHSCORE_PATH, FileAccess.WRITE)
+		var data: Dictionary = {str(Game.Level) : Game.TimeElapsed}
+		var jstr = JSON.stringify(data)
+		file.store_line(jstr)	
+		file.close()
 						
 func getHighScore():
 	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.READ)
@@ -63,6 +69,15 @@ func getHighScore():
 				current_line = JSON.parse_string(file.get_line())
 			if current_line:
 				return current_line[str(Game.Level)]			
+	file.close()	
+	
+func getRecords():
+	var records = ""
+	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.READ)
+	if FileAccess.file_exists(HIGHSCORE_PATH):
+		while not file.eof_reached():
+			records += file.get_line() + "\n"		
+	return records
 	file.close()	
 		
 

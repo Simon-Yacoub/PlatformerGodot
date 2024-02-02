@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://qriqgydjcawb"]
+[gd_scene load_steps=9 format=3 uid="uid://cj2s62g5yxjni"]
 
-[ext_resource type="Texture2D" uid="uid://bepr3cg3wkcfr" path="res://Resources/LevelComplete.png" id="1_xa2ly"]
-[ext_resource type="Script" path="res://HighScore.gd" id="2_fhle0"]
-[ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="2_trfuv"]
+[ext_resource type="Texture2D" uid="uid://bepr3cg3wkcfr" path="res://Resources/LevelComplete.png" id="1_qmhaj"]
+[ext_resource type="Script" path="res://HighScore.gd" id="2_5vqfl"]
+[ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="3_tpwda"]
+[ext_resource type="Script" path="res://RecordButton.gd" id="4_verc6"]
 
 [sub_resource type="GDScript" id="GDScript_ra7uy"]
 script/source = "extends Label
@@ -19,15 +20,6 @@ func _process(delta):
 	text = \"Your Time: \" +  \"%02d:%02d\" % [fmod(Game.TimeElapsed, 60), fmod(Game.TimeElapsed, 1) * 100]
 "
 
-[sub_resource type="GDScript" id="GDScript_oexip"]
-script/source = "extends Button
-
-func _on_pressed():
-	Game.Level += 1
-	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://Levels/level\" + str(Game.Level) + \".tscn\")
-"
-
 [sub_resource type="GDScript" id="GDScript_s36fl"]
 script/source = "extends Button
 
@@ -42,7 +34,7 @@ script/source = "extends Button
 
 func _on_pressed():
 	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://Levels/level\" + str(Game.Level) + \".tscn\")
+	get_tree().change_scene_to_file(\"res://level\" + str(Game.Level) + \".tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_byxfw"]
@@ -67,12 +59,12 @@ func _ready():
 
 "
 
-[node name="LevelComplete" type="Node2D"]
+[node name="FinalLevelComplete" type="Node2D"]
 
 [node name="LevelCompleteBackground" type="Sprite2D" parent="."]
 position = Vector2(576, 304)
 scale = Vector2(0.988812, 0.79)
-texture = ExtResource("1_xa2ly")
+texture = ExtResource("1_qmhaj")
 
 [node name="Time" type="Label" parent="."]
 offset_left = 144.0
@@ -90,7 +82,7 @@ offset_right = 817.0
 offset_bottom = 197.0
 theme_override_font_sizes/font_size = 30
 text = "Highscore:"
-script = ExtResource("2_fhle0")
+script = ExtResource("2_5vqfl")
 
 [node name="LevelCompleteMsg" type="Label" parent="."]
 offset_left = 184.0
@@ -101,28 +93,20 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 105
-text = "Level Complete!"
-
-[node name="Next" type="Button" parent="."]
-offset_left = 88.0
-offset_top = 368.0
-offset_right = 352.0
-offset_bottom = 592.0
-text = "Next Level"
-script = SubResource("GDScript_oexip")
+text = "The End!"
 
 [node name="Main" type="Button" parent="."]
-offset_left = 768.0
-offset_top = 368.0
-offset_right = 1040.0
-offset_bottom = 592.0
+offset_left = 776.0
+offset_top = 384.0
+offset_right = 1072.0
+offset_bottom = 584.0
 text = "Main Menu"
 script = SubResource("GDScript_s36fl")
 
 [node name="PlayAgain" type="Button" parent="."]
-offset_left = 408.0
+offset_left = 72.0
 offset_top = 376.0
-offset_right = 728.0
+offset_right = 392.0
 offset_bottom = 592.0
 text = "Play Again"
 script = SubResource("GDScript_r8xlb")
@@ -133,18 +117,26 @@ script = SubResource("GDScript_byxfw")
 [node name="Gem-1" type="Sprite2D" parent="Gems"]
 position = Vector2(352, 288)
 scale = Vector2(11.1833, 10.7115)
-texture = ExtResource("2_trfuv")
+texture = ExtResource("3_tpwda")
 
 [node name="Gem-2" type="Sprite2D" parent="Gems"]
 position = Vector2(576, 288)
 scale = Vector2(11.1833, 10.7115)
-texture = ExtResource("2_trfuv")
+texture = ExtResource("3_tpwda")
 
 [node name="Gem-3" type="Sprite2D" parent="Gems"]
 position = Vector2(800, 288)
 scale = Vector2(11.1833, 10.7115)
-texture = ExtResource("2_trfuv")
+texture = ExtResource("3_tpwda")
 
-[connection signal="pressed" from="Next" to="Next" method="_on_pressed"]
+[node name="Record" type="Button" parent="."]
+offset_left = 424.0
+offset_top = 384.0
+offset_right = 744.0
+offset_bottom = 584.0
+text = "Record Book"
+script = ExtResource("4_verc6")
+
 [connection signal="pressed" from="Main" to="Main" method="_on_pressed"]
 [connection signal="pressed" from="PlayAgain" to="PlayAgain" method="_on_pressed"]
+[connection signal="pressed" from="Record" to="Record" method="_on_pressed"]

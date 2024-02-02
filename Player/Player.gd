@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
-const LOWER_LIMIT = 600
+const LOWER_LIMIT = 800
 @onready var anim = get_node("AnimationPlayer")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -42,7 +42,7 @@ func _physics_process(delta):
 	if velocity.y > 0:
 		anim.play("Fall")
 		
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("throw_projectile"):
 		var p = preload("res://projectile.tscn").instantiate()
 		owner.add_child(p)
 		p.transform = $Muzzle.global_transform
@@ -56,7 +56,5 @@ func playerDeath():
 	anim.play("Death")
 	velocity.y = JUMP_VELOCITY
 	await anim.animation_finished 
-	queue_free()
-	Game.PlayerHp = 10
-	Game.Gold = 0
+	queue_free()	
 	get_tree().change_scene_to_file("res://game_over.tscn")

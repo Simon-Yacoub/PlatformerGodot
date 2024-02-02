@@ -289,7 +289,7 @@ script = ExtResource("1_eonji")
 shape = SubResource("CapsuleShape2D_c82qk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(1, -6)
 sprite_frames = SubResource("SpriteFrames_4fgwk")
 animation = &"Jump"
 

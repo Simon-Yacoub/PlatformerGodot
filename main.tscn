@@ -35,6 +35,14 @@ position = Vector2(571, 325)
 scale = Vector2(2.97917, 2.675)
 texture = ExtResource("2_1w7hi")
 
+[node name="Record Book" type="Button" parent="."]
+offset_left = 845.0
+offset_top = 440.0
+offset_right = 1051.0
+offset_bottom = 604.0
+text = "Record Book"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Record Book" to="." method="_on_record_book_pressed"]
