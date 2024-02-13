@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d30xvhhnd7n1g"]
+[gd_scene load_steps=4 format=3 uid="uid://d30xvhhnd7n1g"]
 
 [ext_resource type="Script" path="res://level_select.gd" id="1_07714"]
+[ext_resource type="Texture2D" uid="uid://dic6e3ndfvmg5" path="res://Resources/back_arrow.png" id="2_jsoy2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fw0cm"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_07714")
@@ -75,6 +78,14 @@ offset_right = 781.0
 offset_bottom = 593.0
 text = "Lv.10"
 
+[node name="Back" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_fw0cm")
+offset_left = 24.0
+offset_top = 456.0
+offset_right = 255.0
+offset_bottom = 622.0
+icon = ExtResource("2_jsoy2")
+
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level3" to="." method="_on_level_3_pressed"]
@@ -85,3 +96,4 @@ text = "Lv.10"
 [connection signal="pressed" from="Level8" to="." method="_on_level_8_pressed"]
 [connection signal="pressed" from="Level9" to="." method="_on_level_9_pressed"]
 [connection signal="pressed" from="Level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

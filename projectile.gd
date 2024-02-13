@@ -12,7 +12,6 @@ func _physics_process(delta):
 		position += -1 * transform.x * speed * delta
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name == "TileMap":
 		queue_free()
 	if body.name.substr(0, 4) == "Frog":

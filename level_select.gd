@@ -62,3 +62,6 @@ func _on_level_10_pressed():
 	Game.resetPlayerStats()
 	get_tree().change_scene_to_file("res://Levels/level10.tscn")
 
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://main.tscn")
