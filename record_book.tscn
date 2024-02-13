@@ -9,7 +9,7 @@ script/source = "extends Button
 func _on_pressed():
 	Game.Level = 1
 	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://Main/main.tscn\")
+	get_tree().change_scene_to_file(\"res://main.tscn\")
 
 
 func _on_reset_pressed():

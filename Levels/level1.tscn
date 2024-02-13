@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_65jde"]
 [ext_resource type="PackedScene" uid="uid://ccjaovvgubtgs" path="res://Background.tscn" id="2_n1q3n"]
-[ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player/Player.tscn" id="3_uawqo"]
+[ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player.tscn" id="3_uawqo"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="4_s0r7b"]
 [ext_resource type="Script" path="res://HP.gd" id="5_eld3w"]
 [ext_resource type="Script" path="res://Gold.gd" id="6_fyq44"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Hearts.gd" id="8_2fhn1"]
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="9_2qf5o"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_4qk8l"]
-[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://Gates/gate.tscn" id="11_8a1cg"]
+[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_8a1cg"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="12_prltc"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="13_kb4af"]
 
