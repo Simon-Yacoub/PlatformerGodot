@@ -10,6 +10,11 @@ func _on_pressed():
 	Game.Level = 1
 	Game.resetPlayerStats()
 	get_tree().change_scene_to_file(\"res://main.tscn\")
+
+
+func _on_reset_pressed():
+	DirAccess.remove_absolute(\"res://highscore.bin\")
+	Utils.record_book = {}
 "
 
 [node name="LevelComplete" type="Node2D"]
@@ -45,4 +50,12 @@ offset_right = 496.0
 offset_bottom = 408.0
 script = ExtResource("2_lshxl")
 
+[node name="Reset" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 56.0
+offset_right = 1040.0
+offset_bottom = 120.0
+text = "Reset"
+
 [connection signal="pressed" from="Main" to="Main" method="_on_pressed"]
+[connection signal="pressed" from="Reset" to="Main" method="_on_reset_pressed"]

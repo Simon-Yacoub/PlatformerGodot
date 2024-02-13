@@ -12,6 +12,11 @@ script/source = "extends Button
 func _on_pressed():
 	Game.resetPlayerStats()
 	get_tree().change_scene_to_file(\"res://Levels/level\" + str(Game.Level) + \".tscn\")
+
+
+func _on_main_pressed():
+	Game.resetPlayerStats()
+	get_tree().change_scene_to_file(\"res://main.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_pho2n"]
@@ -60,21 +65,29 @@ text = "Game Over"
 
 [node name="Play" type="Button" parent="."]
 modulate = Color(0, 1, 1, 1)
-offset_left = 136.0
+offset_left = 72.0
 offset_top = 200.0
-offset_right = 464.0
+offset_right = 400.0
 offset_bottom = 400.0
 text = "Play Again"
 script = SubResource("GDScript_iqma4")
 
 [node name="Quit" type="Button" parent="."]
 modulate = Color(1, 0, 1, 1)
-offset_left = 672.0
+offset_left = 736.0
 offset_top = 200.0
-offset_right = 992.0
+offset_right = 1056.0
 offset_bottom = 392.0
 text = "Quit"
 script = SubResource("GDScript_pho2n")
 
+[node name="Main" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 200.0
+offset_right = 704.0
+offset_bottom = 392.0
+text = "Main Menu"
+
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
+[connection signal="pressed" from="Main" to="Play" method="_on_main_pressed"]

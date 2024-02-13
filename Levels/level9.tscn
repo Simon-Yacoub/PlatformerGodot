@@ -104,16 +104,16 @@ scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("8_gxrss")
 
 [node name="Gate" parent="." instance=ExtResource("9_ntu2b")]
-position = Vector2(2232, 21)
+position = Vector2(168, 416)
 
 [node name="Gem" parent="." instance=ExtResource("10_doyco")]
-position = Vector2(1313, 412)
+position = Vector2(133, 405)
 
 [node name="Gem2" parent="." instance=ExtResource("10_doyco")]
-position = Vector2(920, 410)
+position = Vector2(111, 417)
 
 [node name="Gem3" parent="." instance=ExtResource("10_doyco")]
-position = Vector2(458, 418)
+position = Vector2(84, 414)
 
 [node name="Mobs" type="Node2D" parent="."]
 
