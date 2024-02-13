@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_PATH = "res://savegame.bin"
 const HIGHSCORE_PATH = "res://highscore.bin"
+const TOTAL_GAME_LEVELS = 10
 var record_book = {}
 
 func saveGame():
@@ -26,11 +27,13 @@ func loadGame():
 	loadRecordBook()
 
 func saveTime():	
-	if record_book.has(str(Game.Level)):
+	if !record_book.has(str(Game.Level)):
+		record_book[str(Game.Level)] = Game.TimeElapsed
+	else:
 		var previousTimeForThisLevel = record_book.get(str(Game.Level))
 		if Game.TimeElapsed < previousTimeForThisLevel:
 			record_book[str(Game.Level)] = Game.TimeElapsed			
-			saveRecordBook()
+	saveRecordBook()	
 		
 func saveRecordBook():
 	var file = FileAccess.open(HIGHSCORE_PATH, FileAccess.WRITE)
@@ -57,7 +60,7 @@ func getRecords():
 	var records = ""
 	var keys = record_book.keys()
 	var values = record_book.values()
-	for x in 10:
+	for x in TOTAL_GAME_LEVELS + 1:
 		if record_book.has(str(x)):
 			records += "Level " + str(x) + ": " + str(record_book.get(str(x))) + "\n"
 	return records

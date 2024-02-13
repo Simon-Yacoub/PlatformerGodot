@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="9_sw2d4"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="10_tren7"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="11_bmodi"]
-[ext_resource type="PackedScene" uid="uid://c473sgvuaookp" path="res://final_gate.tscn" id="12_qob33"]
+[ext_resource type="PackedScene" uid="uid://c473sgvuaookp" path="res://Gates/final_gate.tscn" id="12_qob33"]
 
 [sub_resource type="GDScript" id="GDScript_ent6b"]
 script/source = "extends Label

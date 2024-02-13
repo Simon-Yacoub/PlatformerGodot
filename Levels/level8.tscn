@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Time.gd" id="6_oht2n"]
 [ext_resource type="Script" path="res://Hearts.gd" id="7_vgxjw"]
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_msa0b"]
-[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="9_7eli8"]
+[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://Gates/gate.tscn" id="9_7eli8"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="10_50hfi"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="11_ypqwi"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="12_cul1m"]

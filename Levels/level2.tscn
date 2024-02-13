@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_dxnvt"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="9_oewap"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_53p3y"]
-[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_ixain"]
+[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://Gates/gate.tscn" id="11_ixain"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="12_lunqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qdhy"]

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bepr3cg3wkcfr" path="res://Resources/LevelComplete.png" id="1_qmhaj"]
 [ext_resource type="Script" path="res://HighScore.gd" id="2_5vqfl"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="3_tpwda"]
-[ext_resource type="Script" path="res://RecordButton.gd" id="4_verc6"]
 
 [sub_resource type="GDScript" id="GDScript_ra7uy"]
 script/source = "extends Label
@@ -57,6 +56,24 @@ func _ready():
 		2:
 			gem3.modulate = Color(0, 0, 0)
 
+"
+
+[sub_resource type="GDScript" id="GDScript_f4c45"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://record_book.tscn\")
 "
 
 [node name="FinalLevelComplete" type="Node2D"]
@@ -129,14 +146,14 @@ position = Vector2(800, 288)
 scale = Vector2(11.1833, 10.7115)
 texture = ExtResource("3_tpwda")
 
-[node name="Record" type="Button" parent="."]
+[node name="Records" type="Button" parent="."]
 offset_left = 424.0
-offset_top = 384.0
-offset_right = 744.0
+offset_top = 376.0
+offset_right = 752.0
 offset_bottom = 584.0
 text = "Record Book"
-script = ExtResource("4_verc6")
+script = SubResource("GDScript_f4c45")
 
 [connection signal="pressed" from="Main" to="Main" method="_on_pressed"]
 [connection signal="pressed" from="PlayAgain" to="PlayAgain" method="_on_pressed"]
-[connection signal="pressed" from="Record" to="Record" method="_on_pressed"]
+[connection signal="pressed" from="Records" to="Records" method="_on_pressed"]
