@@ -16,7 +16,7 @@ func _on_pressed():
 
 func _on_main_pressed():
 	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://main.tscn\")
+	get_tree().change_scene_to_file(\"res://Main/main.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_pho2n"]

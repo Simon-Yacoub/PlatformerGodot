@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlie2606kmcr2"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_qugje"]
+[ext_resource type="Script" path="res://Main/main.gd" id="1_qugje"]
 [ext_resource type="Texture2D" uid="uid://lfc4vkdcr6wn" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_1w7hi"]
 
 [node name="Main" type="Node2D"]

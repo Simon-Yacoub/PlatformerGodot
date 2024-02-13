@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d30xvhhnd7n1g"]
 
 [ext_resource type="Script" path="res://level_select.gd" id="1_07714"]
-[ext_resource type="Texture2D" uid="uid://dic6e3ndfvmg5" path="res://Resources/back_arrow.png" id="2_jsoy2"]
+[ext_resource type="Texture2D" uid="uid://e7dgkf0tibd7" path="res://Resources/back_arrow.png" id="2_jsoy2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fw0cm"]
 

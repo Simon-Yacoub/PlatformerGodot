@@ -64,4 +64,4 @@ func _on_level_10_pressed():
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://Main/main.tscn")
