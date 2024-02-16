@@ -4,6 +4,7 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const LOWER_LIMIT = 800
 @onready var anim = get_node("AnimationPlayer")
+var ammo = 3
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,8 +43,9 @@ func _physics_process(delta):
 	if velocity.y > 0:
 		anim.play("Fall")
 		
-	if Input.is_action_just_pressed("throw_projectile"):
-		var p = preload("res://projectile.tscn").instantiate()
+	if Input.is_action_just_pressed("throw_projectile") && ammo > 0 :
+		ammo -= 1
+		var p = preload("res://acorn.tscn").instantiate()
 		owner.add_child(p)
 		p.transform = $Muzzle.global_transform
 				

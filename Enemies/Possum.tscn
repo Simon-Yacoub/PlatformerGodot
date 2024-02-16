@@ -82,7 +82,7 @@ shape = SubResource("RectangleShape2D_2i42k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_16sf3")
 animation = &"Walk"
-frame_progress = 0.646196
+frame_progress = 0.38515
 
 [node name="PlayerCollision" type="Area2D" parent="."]
 
