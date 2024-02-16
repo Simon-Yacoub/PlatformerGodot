@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0dpu1jf7ii73"]
+[gd_scene load_steps=9 format=3 uid="uid://c5gy763i7wod6"]
 
 [ext_resource type="Texture2D" uid="uid://dirn7gd6u2v0l" path="res://Resources/ninjastar.png" id="1_6lbab"]
 [ext_resource type="Script" path="res://projectile.gd" id="1_gcp05"]

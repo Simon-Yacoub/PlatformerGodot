@@ -1,0 +1,100 @@
+[gd_scene load_steps=18 format=3 uid="uid://dk522syn2nhly"]
+
+[ext_resource type="Texture2D" uid="uid://cwu1m8xqc636n" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-1.png" id="1_0uu5o"]
+[ext_resource type="Texture2D" uid="uid://u7i5ytgpca0c" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-1.png" id="1_bbyck"]
+[ext_resource type="Script" path="res://Enemies/Possum.gd" id="1_upj04"]
+[ext_resource type="Texture2D" uid="uid://dcpgqw02hr3nw" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-2.png" id="2_bwavk"]
+[ext_resource type="Texture2D" uid="uid://b3s8qtmd1h8id" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-2.png" id="2_kfasv"]
+[ext_resource type="Texture2D" uid="uid://ctbxrdlyrcjgv" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-3.png" id="3_58n6i"]
+[ext_resource type="Texture2D" uid="uid://d1l5wd26fmye1" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-3.png" id="3_ofk8f"]
+[ext_resource type="Texture2D" uid="uid://b31n0x6afvdr2" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-4.png" id="4_bwis3"]
+[ext_resource type="Texture2D" uid="uid://bt0s0jwi5ixwx" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-4.png" id="4_jqb4k"]
+[ext_resource type="Texture2D" uid="uid://bf06o3cclephx" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-5.png" id="5_14bx6"]
+[ext_resource type="Texture2D" uid="uid://g8hxxqfv5wwa" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-5.png" id="5_idvrp"]
+[ext_resource type="Texture2D" uid="uid://dgwsmuqy3ck2a" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-6.png" id="6_3nvrv"]
+[ext_resource type="Texture2D" uid="uid://uwj0qc7ggttg" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/opossum/opossum-6.png" id="6_5f15e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i42k"]
+size = Vector2(22, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16sf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0uu5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bwavk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ofk8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bwis3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idvrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3nvrv")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bbyck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kfasv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_58n6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqb4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_14bx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5f15e")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4wy1"]
+size = Vector2(27, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ipbj"]
+size = Vector2(29, 7)
+
+[node name="Possum" type="CharacterBody2D"]
+script = ExtResource("1_upj04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_2i42k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_16sf3")
+animation = &"Walk"
+frame_progress = 0.646196
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(-1.5, 3.5)
+shape = SubResource("RectangleShape2D_f4wy1")
+
+[node name="TileMapCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapCollision"]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_1ipbj")
+
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
+[connection signal="body_entered" from="TileMapCollision" to="." method="_on_tile_map_collision_body_entered"]

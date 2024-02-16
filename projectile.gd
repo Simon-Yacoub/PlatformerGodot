@@ -20,3 +20,6 @@ func _on_body_entered(body):
 	if body.name.substr(0, 5) == "Eagle":
 		body.death() 
 		queue_free()
+	if body.name.substr(0, 6) == "Possum":
+		body.death() 
+		queue_free()
