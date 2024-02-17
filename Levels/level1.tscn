@@ -1,18 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqasn4exiqv0j"]
+[gd_scene load_steps=23 format=3 uid="uid://cqasn4exiqv0j"]
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_65jde"]
 [ext_resource type="PackedScene" uid="uid://ccjaovvgubtgs" path="res://Background.tscn" id="2_n1q3n"]
 [ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player.tscn" id="3_uawqo"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="4_s0r7b"]
 [ext_resource type="Script" path="res://HP.gd" id="5_eld3w"]
-[ext_resource type="Script" path="res://Gold.gd" id="6_fyq44"]
 [ext_resource type="Script" path="res://Time.gd" id="7_6ei6c"]
 [ext_resource type="Script" path="res://Hearts.gd" id="8_2fhn1"]
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="9_2qf5o"]
+[ext_resource type="Script" path="res://Collectables/Ammo.gd" id="10_2jgmx"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_4qk8l"]
+[ext_resource type="Texture2D" uid="uid://r17qpbju40rm" path="res://Resources/acorn.png" id="10_sj4hi"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_8a1cg"]
+[ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="11_54jlg"]
+[ext_resource type="PackedScene" uid="uid://db62mcxjpyrlg" path="res://Collectables/Ammo.tscn" id="12_ot68x"]
+[ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="12_pi8rf"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="12_prltc"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="13_kb4af"]
+[ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="13_u13v5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on0lp"]
 texture = ExtResource("1_65jde")
@@ -427,18 +432,35 @@ texture = ExtResource("1_65jde")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_on0lp")
 
-[sub_resource type="GDScript" id="GDScript_23uux"]
-script/source = "extends Label
+[sub_resource type="GDScript" id="GDScript_0rfxh"]
+script/source = "extends Node2D
 
+@onready var Gem1 = get_node(\"Gem\")
+@onready var Gem2 = get_node(\"Gem2\")
+@onready var Gem3 = get_node(\"Gem3\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	text = \"Gems: \" + str(Game.Gems)
+	pass
+			
+func _process(delta): 
+	match Game.Gems:
+		0:
+			Gem1.modulate = Color(0, 0, 0)
+			Gem2.modulate = Color(0, 0, 0)
+			Gem3.modulate = Color(0, 0, 0)
+		1:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(0, 0, 0)
+			Gem3.modulate = Color(0, 0, 0)
+		2:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(Color.WHITE)
+			Gem3.modulate = Color(0, 0, 0)
+		_:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(Color.WHITE)
+			Gem3.modulate = Color(Color.WHITE)
 "
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_53l8k"]
@@ -460,7 +482,7 @@ position = Vector2(176, 224)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("4_s0r7b")]
-position = Vector2(1424, 432)
+position = Vector2(1000, 424)
 
 [node name="Frog2" parent="Mobs" instance=ExtResource("4_s0r7b")]
 position = Vector2(2768, 456)
@@ -477,69 +499,89 @@ position = Vector2(1936, 448)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HP" type="Label" parent="UI"]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 56.0
-offset_bottom = 50.0
+offset_left = 7.0
+offset_top = 656.0
+offset_right = 204.0
+offset_bottom = 698.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "HPplaceholder"
 script = ExtResource("5_eld3w")
 
-[node name="Gold" type="Label" parent="UI"]
-visible = false
-offset_left = 16.0
-offset_top = 40.0
-offset_right = 237.0
-offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "Goldplaceholder"
-script = ExtResource("6_fyq44")
-
-[node name="Gems" type="Label" parent="UI"]
-offset_left = 16.0
-offset_top = 48.0
-offset_right = 252.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "Gemsplaceholder"
-script = SubResource("GDScript_23uux")
-
 [node name="Time" type="Label" parent="UI"]
-offset_left = 248.0
-offset_top = 8.0
-offset_right = 525.0
-offset_bottom = 64.0
+offset_left = 904.0
+offset_top = 2.0
+offset_right = 1145.0
+offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "TimerPlaceHolder"
+horizontal_alignment = 2
 script = ExtResource("7_6ei6c")
 
-[node name="Hearts" type="Node2D" parent="UI"]
+[node name="HeartsUI" type="Node2D" parent="UI"]
 script = ExtResource("8_2fhn1")
 
-[node name="Heart" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(64, 96)
+[node name="Heart" type="Sprite2D" parent="UI/HeartsUI"]
+position = Vector2(60, 13)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("9_2qf5o")
 
-[node name="Heart2" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(40, 96)
+[node name="Heart2" type="Sprite2D" parent="UI/HeartsUI"]
+position = Vector2(38, 13)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("9_2qf5o")
 
-[node name="Heart3" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(16, 96)
+[node name="Heart3" type="Sprite2D" parent="UI/HeartsUI"]
+position = Vector2(14, 13)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("9_2qf5o")
+
+[node name="AmmoUI" type="Node2D" parent="UI"]
+
+[node name="Ammo" type="Label" parent="UI/AmmoUI"]
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 165.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = ":
+"
+script = ExtResource("10_2jgmx")
+metadata/_edit_use_anchors_ = true
+
+[node name="AmmoIcon" type="Sprite2D" parent="UI/AmmoUI"]
+position = Vector2(19, 60)
+scale = Vector2(-0.0901715, 0.083825)
+texture = ExtResource("10_sj4hi")
+
+[node name="GemsUI" type="Node2D" parent="UI"]
+script = SubResource("GDScript_0rfxh")
+
+[node name="Gem" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(565, 24)
+scale = Vector2(2.092, 2)
+texture = ExtResource("11_54jlg")
+
+[node name="Gem2" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(598, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("12_pi8rf")
+
+[node name="Gem3" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(628, 25)
+scale = Vector2(2, 2.141)
+texture = ExtResource("13_u13v5")
 
 [node name="Collectables" type="Node2D" parent="."]
 position = Vector2(928, 240)
 
 [node name="Cherry8" parent="Collectables" instance=ExtResource("10_4qk8l")]
 position = Vector2(1376, 192)
+
+[node name="Ammo" parent="Collectables" instance=ExtResource("12_ot68x")]
+position = Vector2(3560, -16)
 
 [node name="Gate" parent="." instance=ExtResource("11_8a1cg")]
 position = Vector2(5544, 464)
@@ -556,9 +598,9 @@ position = Vector2(5376, 464)
 [node name="Instruction1" type="Label" parent="."]
 material = SubResource("CanvasItemMaterial_53l8k")
 offset_left = 232.0
-offset_top = 272.0
+offset_top = 248.0
 offset_right = 462.0
-offset_bottom = 322.0
+offset_bottom = 298.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "Move using the arrow keys
@@ -579,14 +621,25 @@ horizontal_alignment = 1
 
 [node name="Instruction3" type="Label" parent="."]
 material = SubResource("CanvasItemMaterial_53l8k")
-offset_left = 1304.0
-offset_top = 280.0
-offset_right = 1534.0
-offset_bottom = 330.0
+offset_left = 896.0
+offset_top = 288.0
+offset_right = 1126.0
+offset_bottom = 338.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "Avoid the critters         
 				"
+horizontal_alignment = 1
+
+[node name="Instruction10" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_53l8k")
+offset_left = 1288.0
+offset_top = 288.0
+offset_right = 1518.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Throw Acorns at the critters with x but be careful ammo is limited"
 horizontal_alignment = 1
 
 [node name="Instruction4" type="Label" parent="."]
@@ -647,16 +700,11 @@ text = "You Can Jump Up and Off Walls by Pressing Space bar
  Try it now by double tapping space bar against this wall"
 horizontal_alignment = 1
 
-[node name="Instruction9" type="Label" parent="."]
-material = SubResource("CanvasItemMaterial_53l8k")
-offset_left = 4568.0
-offset_top = 376.0
-offset_right = 5515.0
-offset_bottom = 401.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "Throw Ninja Stars Using the \"X\" key"
-horizontal_alignment = 1
-
 [node name="Eagle" parent="." instance=ExtResource("13_kb4af")]
-position = Vector2(4800, 64)
+position = Vector2(5536, 200)
+
+[node name="Ammo" parent="." instance=ExtResource("12_ot68x")]
+position = Vector2(520, 416)
+
+[node name="Ammo2" parent="." instance=ExtResource("12_ot68x")]
+position = Vector2(1544, 408)

@@ -1,16 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://tf3mjc5l5e3x"]
+[gd_scene load_steps=20 format=3 uid="uid://tf3mjc5l5e3x"]
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_mldnx"]
 [ext_resource type="PackedScene" uid="uid://ccjaovvgubtgs" path="res://Background.tscn" id="2_h7x4b"]
-[ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player/Player.tscn" id="3_d8uw4"]
+[ext_resource type="PackedScene" uid="uid://b7p3gyxbk1jyo" path="res://Player.tscn" id="3_d8uw4"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="4_srmjw"]
-[ext_resource type="Script" path="res://HP.gd" id="5_sf5ks"]
 [ext_resource type="Script" path="res://Time.gd" id="6_15b5g"]
 [ext_resource type="Script" path="res://Hearts.gd" id="7_uuv1o"]
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_dxnvt"]
+[ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="9_b8rig"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="9_oewap"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_53p3y"]
-[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://Gates/gate.tscn" id="11_ixain"]
+[ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="10_whi1s"]
+[ext_resource type="Script" path="res://Collectables/Ammo.gd" id="11_63ok8"]
+[ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="11_bydsq"]
+[ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_ixain"]
+[ext_resource type="Texture2D" uid="uid://r17qpbju40rm" path="res://Resources/acorn.png" id="12_3phk8"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="12_lunqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qdhy"]
@@ -437,18 +441,35 @@ texture = ExtResource("1_mldnx")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_4qdhy")
 
-[sub_resource type="GDScript" id="GDScript_p8l2g"]
-script/source = "extends Label
+[sub_resource type="GDScript" id="GDScript_ve3wk"]
+script/source = "extends Node2D
 
+@onready var Gem1 = get_node(\"Gem\")
+@onready var Gem2 = get_node(\"Gem2\")
+@onready var Gem3 = get_node(\"Gem3\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	text = \"Gems: \" + str(Game.Gems)
+	pass
+			
+func _process(delta): 
+	match Game.Gems:
+		0:
+			Gem1.modulate = Color(0, 0, 0)
+			Gem2.modulate = Color(0, 0, 0)
+			Gem3.modulate = Color(0, 0, 0)
+		1:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(0, 0, 0)
+			Gem3.modulate = Color(0, 0, 0)
+		2:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(Color.WHITE)
+			Gem3.modulate = Color(0, 0, 0)
+		_:
+			Gem1.modulate = Color(Color.WHITE)
+			Gem2.modulate = Color(Color.WHITE)
+			Gem3.modulate = Color(Color.WHITE)
 "
 
 [node name="Level2" type="Node2D"]
@@ -484,53 +505,71 @@ position = Vector2(1448, 416)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HP" type="Label" parent="UI"]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 56.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "HPplaceholder"
-script = ExtResource("5_sf5ks")
-
-[node name="Gems" type="Label" parent="UI"]
-offset_left = 8.0
-offset_top = 40.0
-offset_right = 244.0
-offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
-text = "Gemsplaceholder"
-script = SubResource("GDScript_p8l2g")
-
 [node name="Time" type="Label" parent="UI"]
-offset_left = 280.0
-offset_top = 24.0
-offset_right = 557.0
-offset_bottom = 80.0
+offset_left = 864.0
+offset_top = 8.0
+offset_right = 1141.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "TimerPlaceHolder"
+horizontal_alignment = 2
 script = ExtResource("6_15b5g")
 
 [node name="Hearts" type="Node2D" parent="UI"]
 script = ExtResource("7_uuv1o")
 
 [node name="Heart" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(64, 96)
+position = Vector2(64, 24)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("8_dxnvt")
 
 [node name="Heart2" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(40, 96)
+position = Vector2(40, 24)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("8_dxnvt")
 
 [node name="Heart3" type="Sprite2D" parent="UI/Hearts"]
-position = Vector2(16, 96)
+position = Vector2(16, 24)
 scale = Vector2(0.03125, 0.03125)
 texture = ExtResource("8_dxnvt")
+
+[node name="GemsUI" type="Node2D" parent="UI"]
+script = SubResource("GDScript_ve3wk")
+
+[node name="Gem" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(565, 24)
+scale = Vector2(2.092, 2)
+texture = ExtResource("9_b8rig")
+
+[node name="Gem2" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(598, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("10_whi1s")
+
+[node name="Gem3" type="Sprite2D" parent="UI/GemsUI"]
+position = Vector2(628, 25)
+scale = Vector2(2, 2.141)
+texture = ExtResource("11_bydsq")
+
+[node name="AmmoUI" type="Node2D" parent="UI"]
+
+[node name="Ammo" type="Label" parent="UI/AmmoUI"]
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 165.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = ":
+"
+script = ExtResource("11_63ok8")
+metadata/_edit_use_anchors_ = true
+
+[node name="AmmoIcon" type="Sprite2D" parent="UI/AmmoUI"]
+position = Vector2(19, 60)
+scale = Vector2(-0.0901715, 0.083825)
+texture = ExtResource("12_3phk8")
 
 [node name="Collectables" type="Node2D" parent="."]
 position = Vector2(928, 240)

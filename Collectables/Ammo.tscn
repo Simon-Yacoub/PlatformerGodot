@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://db62mcxjpyrlg"]
+
+[ext_resource type="Texture2D" uid="uid://r17qpbju40rm" path="res://Resources/acorn.png" id="1_x66a2"]
+
+[sub_resource type="GDScript" id="GDScript_xm1dx"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == \"Player\":
+		Game.Ammo += 3 
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, \"modulate:a\", 0, 0.3)
+		tween.tween_callback(queue_free)		
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1owr"]
+radius = 7.0
+
+[node name="Ammo" type="Node2D"]
+script = SubResource("GDScript_xm1dx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t1owr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.0373755, 0.0374396)
+texture = ExtResource("1_x66a2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
