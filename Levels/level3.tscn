@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="9_2loe3"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="10_aqh6d"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="10_n06on"]
-[ext_resource type="Texture2D" uid="uid://r17qpbju40rm" path="res://Resources/acorn.png" id="10_qk0ah"]
+[ext_resource type="Texture2D" uid="uid://bggb40xp0ge7m" path="res://Resources/acorn.png" id="10_qk0ah"]
 [ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="11_321ro"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="11_i8sak"]
 [ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="12_g4i6e"]

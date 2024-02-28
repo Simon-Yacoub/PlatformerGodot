@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db62mcxjpyrlg"]
 
-[ext_resource type="Texture2D" uid="uid://r17qpbju40rm" path="res://Resources/acorn.png" id="1_x66a2"]
+[ext_resource type="Texture2D" uid="uid://bggb40xp0ge7m" path="res://Resources/acorn.png" id="1_x66a2"]
 
 [sub_resource type="GDScript" id="GDScript_xm1dx"]
 script/source = "extends Node2D
