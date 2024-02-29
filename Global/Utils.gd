@@ -1,7 +1,7 @@
 extends Node
 
-const SAVE_PATH = "res://savegame.bin"
-const HIGHSCORE_PATH = "res://highscore.bin"
+const SAVE_PATH = "user://savegame.bin"
+const HIGHSCORE_PATH = "user://highscore.bin"
 const TOTAL_GAME_LEVELS = 10
 var record_book = {}
 

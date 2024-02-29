@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="11_63ok8"]
 [ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="11_bydsq"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_ixain"]
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="12_3phk8"]
+[ext_resource type="Texture2D" uid="uid://b7d6scm1ax3nd" path="res://Resources/acorn.png" id="12_3phk8"]
 [ext_resource type="PackedScene" uid="uid://bqj2bfiyehg07" path="res://Enemies/eagle.tscn" id="12_lunqi"]
 [ext_resource type="PackedScene" uid="uid://db62mcxjpyrlg" path="res://Collectables/Ammo.tscn" id="17_vjxqs"]
 

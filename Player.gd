@@ -64,8 +64,6 @@ func _physics_process(delta):
 func playerDeath():	
 	anim.play("Death")
 	velocity.y = JUMP_VELOCITY
-	await anim.animation_finished 
-	queue_free()	
 	get_tree().change_scene_to_file("res://game_over.tscn")
 	
 func speedBoost():	

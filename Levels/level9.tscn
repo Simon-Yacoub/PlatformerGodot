@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Hearts.gd" id="7_70tpe"]
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_gxrss"]
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="8_sjfm1"]
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="9_f3ur3"]
+[ext_resource type="Texture2D" uid="uid://b7d6scm1ax3nd" path="res://Resources/acorn.png" id="9_f3ur3"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="9_ntu2b"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="10_doyco"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="10_lds6v"]

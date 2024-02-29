@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="9_2qf5o"]
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="10_2jgmx"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_4qk8l"]
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="10_sj4hi"]
+[ext_resource type="Texture2D" uid="uid://b7d6scm1ax3nd" path="res://Resources/acorn.png" id="10_sj4hi"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_8a1cg"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="11_54jlg"]
 [ext_resource type="PackedScene" uid="uid://db62mcxjpyrlg" path="res://Collectables/Ammo.tscn" id="12_ot68x"]
@@ -528,7 +528,7 @@ position = Vector2(5553, 228)
 curve = SubResource("Curve2D_7v7xu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Mobs/Path2D"]
-position = Vector2(-815.51, -185.402)
+position = Vector2(-815.509, -185.401)
 rotation = -2.47806
 progress = 1173.35
 script = SubResource("GDScript_m41y3")
