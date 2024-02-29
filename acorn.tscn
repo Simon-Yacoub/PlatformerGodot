@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu6ogbd2eshx1"]
 
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="1_chwpo"]
+[ext_resource type="Texture2D" uid="uid://b7d6scm1ax3nd" path="res://Resources/acorn.png" id="1_chwpo"]
 [ext_resource type="Script" path="res://acorn.gd" id="1_leu7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4tr8i"]

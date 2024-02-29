@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_vuw0o"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="9_sw2d4"]
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="9_xoplu"]
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="10_e4j7k"]
+[ext_resource type="Texture2D" uid="uid://b7d6scm1ax3nd" path="res://Resources/acorn.png" id="10_e4j7k"]
 [ext_resource type="PackedScene" uid="uid://wamv3a21vpju" path="res://Enemies/Frog.tscn" id="10_tren7"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="11_eeoi4"]
 [ext_resource type="PackedScene" uid="uid://c473sgvuaookp" path="res://final_gate.tscn" id="12_qob33"]
