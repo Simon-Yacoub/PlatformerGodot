@@ -8,12 +8,10 @@ func _ready():
 	
 func _physics_process(delta):
 	get_node("Sprite2D").rotation += rotation_speed * delta
-	if true:
-		position += transform.x * speed * delta
-	else:
-		position += -1 * transform.x * speed * delta
+	position += transform.x * speed * delta
 
 func _on_body_entered(body):
+	print(body.name)
 	if body.name == "TileMap":
 		queue_free()
 	if body.name.substr(0, 4) == "Frog":
@@ -24,4 +22,7 @@ func _on_body_entered(body):
 		queue_free()
 	if body.name.substr(0, 6) == "Possum":
 		body.death() 
+		queue_free()
+	if body.name.substr(0, 4) == "Boss":
+		body.damage() 
 		queue_free()

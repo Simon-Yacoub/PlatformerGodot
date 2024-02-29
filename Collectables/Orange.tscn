@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://db62mcxjpyrlg"]
+[gd_scene load_steps=4 format=3 uid="uid://df5hd1mi270i6"]
 
-[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="1_x66a2"]
+[ext_resource type="Texture2D" uid="uid://dgae2l4hf63v6" path="res://Resources/orange.png" id="1_ax6v3"]
 
-[sub_resource type="GDScript" id="GDScript_xm1dx"]
+[sub_resource type="GDScript" id="GDScript_lq65a"]
 script/source = "extends Node2D
 
 
@@ -18,26 +18,25 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == \"Player\":
-		Game.Ammo += 3 
+		body.speedBoost()
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, \"modulate:a\", 0, 0.3)
-		tween.tween_callback(queue_free)		
+		tween.tween_callback(queue_free)	
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t1owr"]
-radius = 7.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0a1e"]
 
-[node name="Ammo" type="Node2D"]
-script = SubResource("GDScript_xm1dx")
+[node name="Orange" type="Node2D"]
+script = SubResource("GDScript_lq65a")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_t1owr")
+shape = SubResource("CircleShape2D_r0a1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.90735e-06, 0)
-scale = Vector2(0.0373755, 0.0374396)
-texture = ExtResource("1_x66a2")
+position = Vector2(1, -1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ax6v3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

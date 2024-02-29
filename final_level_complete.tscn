@@ -25,7 +25,7 @@ script/source = "extends Button
 func _on_pressed():
 	Game.Level = 1
 	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://Main/main.tscn\")
+	get_tree().change_scene_to_file(\"res://main.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_r8xlb"]
@@ -33,7 +33,7 @@ script/source = "extends Button
 
 func _on_pressed():
 	Game.resetPlayerStats()
-	get_tree().change_scene_to_file(\"res://level\" + str(Game.Level) + \".tscn\")
+	get_tree().change_scene_to_file(\"res://Levels/level\" + str(Game.Level) + \".tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_byxfw"]

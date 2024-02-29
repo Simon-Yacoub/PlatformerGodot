@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cqasn4exiqv0j"]
+[gd_scene load_steps=26 format=3 uid="uid://cqasn4exiqv0j"]
 
 [ext_resource type="Texture2D" uid="uid://b1banj08edjbi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_65jde"]
 [ext_resource type="PackedScene" uid="uid://ccjaovvgubtgs" path="res://Background.tscn" id="2_n1q3n"]
@@ -11,13 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="9_2qf5o"]
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="10_2jgmx"]
 [ext_resource type="PackedScene" uid="uid://bagw7acqut3kh" path="res://Collectables/Cherry.tscn" id="10_4qk8l"]
-[ext_resource type="Texture2D" uid="uid://bggb40xp0ge7m" path="res://Resources/acorn.png" id="10_sj4hi"]
+[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="10_sj4hi"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="11_8a1cg"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="11_54jlg"]
 [ext_resource type="PackedScene" uid="uid://db62mcxjpyrlg" path="res://Collectables/Ammo.tscn" id="12_ot68x"]
 [ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="12_pi8rf"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="12_prltc"]
 [ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="13_u13v5"]
+[ext_resource type="PackedScene" uid="uid://df5hd1mi270i6" path="res://Collectables/Orange.tscn" id="19_0gl2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on0lp"]
 texture = ExtResource("1_65jde")
@@ -527,8 +528,9 @@ position = Vector2(5553, 228)
 curve = SubResource("Curve2D_7v7xu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Mobs/Path2D"]
-position = Vector2(13, -23)
-rotation = 3.10457
+position = Vector2(-815.51, -185.402)
+rotation = -2.47806
+progress = 1173.35
 script = SubResource("GDScript_m41y3")
 
 [node name="EagleOnPath" parent="Mobs/Path2D/PathFollow2D" instance=ExtResource("5_3setl")]
@@ -738,8 +740,22 @@ text = "You Can Jump Up and Off Walls by Pressing Space bar
  Try it now by double tapping space bar against this wall"
 horizontal_alignment = 1
 
+[node name="Instruction9" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_53l8k")
+offset_left = 3309.0
+offset_top = 251.0
+offset_right = 3934.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Oranges give you a speed boost that lasts 5 seconds"
+horizontal_alignment = 1
+
 [node name="Ammo" parent="." instance=ExtResource("12_ot68x")]
 position = Vector2(520, 416)
 
 [node name="Ammo2" parent="." instance=ExtResource("12_ot68x")]
 position = Vector2(1544, 408)
+
+[node name="Orange" parent="." instance=ExtResource("19_0gl2l")]
+position = Vector2(3603, 383)

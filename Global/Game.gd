@@ -5,11 +5,13 @@ var PlayerHp = 3
 var Ammo = 3
 var Gems = 0
 var TimeElapsed := 0.0
+var PlayerSpeed = 200
 
 func resetPlayerStats():
 	PlayerHp = 3
 	Gems = 0
 	TimeElapsed = 0.0
+	PlayerSpeed = 200
 	
 func _format_seconds(time : float, use_milliseconds : bool) -> String:
 	var minutes := time / 60

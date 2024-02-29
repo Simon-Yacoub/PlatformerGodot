@@ -1,0 +1,131 @@
+[gd_scene load_steps=23 format=3 uid="uid://caekg7c62s10f"]
+
+[ext_resource type="Texture2D" uid="uid://bml14ha3h3i7v" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-1.png" id="1_7oec2"]
+[ext_resource type="Texture2D" uid="uid://ejxb7awrwn0u" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-2.png" id="2_s47ba"]
+[ext_resource type="Texture2D" uid="uid://begg4pgqsov17" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-3.png" id="3_h1si4"]
+[ext_resource type="Texture2D" uid="uid://s0i08k0pk03d" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-4.png" id="4_y3g28"]
+[ext_resource type="Texture2D" uid="uid://b3wiminclqjqb" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-5.png" id="5_ipyyv"]
+[ext_resource type="Texture2D" uid="uid://d1ki6pdm10sot" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-6.png" id="6_p4fcl"]
+[ext_resource type="Texture2D" uid="uid://bafkaleso7j12" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/attack/frog-attack-7.png" id="7_hlpex"]
+[ext_resource type="Texture2D" uid="uid://6g5xlgly3ovg" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/idle/frog-idle-1.png" id="8_2bsua"]
+[ext_resource type="Texture2D" uid="uid://cwu1m8xqc636n" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-1.png" id="9_bycli"]
+[ext_resource type="Texture2D" uid="uid://bbrngr4dg2an4" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/idle/frog-idle-2.png" id="9_q5jsr"]
+[ext_resource type="Texture2D" uid="uid://kgsijbdj6t1c" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/idle/frog-idle-3.png" id="10_qcphx"]
+[ext_resource type="Texture2D" uid="uid://dcpgqw02hr3nw" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-2.png" id="10_w1egx"]
+[ext_resource type="Texture2D" uid="uid://bggcb83s33h3w" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/frogBoss/idle/frog-idle-4.png" id="11_c8gl6"]
+[ext_resource type="Texture2D" uid="uid://d1l5wd26fmye1" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-3.png" id="11_scdrc"]
+[ext_resource type="Texture2D" uid="uid://b31n0x6afvdr2" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-4.png" id="12_hftp8"]
+[ext_resource type="Script" path="res://Enemies/Boss.gd" id="12_xuoyx"]
+[ext_resource type="Texture2D" uid="uid://g8hxxqfv5wwa" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-5.png" id="13_udh71"]
+[ext_resource type="Texture2D" uid="uid://dgwsmuqy3ck2a" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/enemy-death/enemy-death-6.png" id="14_soqxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cehky"]
+size = Vector2(88, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xq0x7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7oec2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s47ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h1si4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y3g28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ipyyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p4fcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hlpex")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bycli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w1egx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_scdrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hftp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_udh71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_soqxd")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2bsua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q5jsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qcphx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c8gl6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avd6t"]
+size = Vector2(110, 108)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vgr1"]
+radius = 287.0
+
+[node name="Boss" type="Node2D"]
+
+[node name="Boss" type="CharacterBody2D" parent="."]
+script = ExtResource("12_xuoyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+visible = false
+position = Vector2(-5, -3)
+shape = SubResource("RectangleShape2D_cehky")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xq0x7")
+animation = &"death"
+frame = 5
+frame_progress = 1.0
+
+[node name="PlayerCollision" type="Area2D" parent="Boss"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/PlayerCollision"]
+position = Vector2(-5, -7)
+shape = SubResource("RectangleShape2D_avd6t")
+
+[node name="PlayerDetection" type="Area2D" parent="Boss"]
+
+[node name="PlayerDetector" type="CollisionShape2D" parent="Boss/PlayerDetection"]
+shape = SubResource("CircleShape2D_5vgr1")
+
+[connection signal="body_entered" from="Boss/PlayerCollision" to="Boss" method="_on_player_collision_body_entered"]
+[connection signal="body_entered" from="Boss/PlayerDetection" to="Boss" method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="Boss/PlayerDetection" to="Boss" method="_on_player_detection_body_exited"]

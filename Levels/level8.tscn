@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crkcmrrvdy042" path="res://Resources/Heart.png" id="8_msa0b"]
 [ext_resource type="Script" path="res://Collectables/Ammo.gd" id="8_pgiqg"]
 [ext_resource type="PackedScene" uid="uid://crs36qqehxony" path="res://gate.tscn" id="9_7eli8"]
-[ext_resource type="Texture2D" uid="uid://bggb40xp0ge7m" path="res://Resources/acorn.png" id="9_oo5xv"]
+[ext_resource type="Texture2D" uid="uid://djdmjkv6htm0h" path="res://Resources/acorn.png" id="9_oo5xv"]
 [ext_resource type="PackedScene" uid="uid://0rm2x5c2yfhe" path="res://gem.tscn" id="10_50hfi"]
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="10_g8ge8"]
 [ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="11_mmhjk"]
@@ -142,16 +142,16 @@ scale = Vector2(2, 2.141)
 texture = ExtResource("12_0j22x")
 
 [node name="Gate" parent="." instance=ExtResource("9_7eli8")]
-position = Vector2(127, 413)
+position = Vector2(1048, 392)
 
 [node name="Gem" parent="." instance=ExtResource("10_50hfi")]
-position = Vector2(87, 425)
+position = Vector2(941, 401)
 
 [node name="Gem2" parent="." instance=ExtResource("10_50hfi")]
-position = Vector2(101, 424)
+position = Vector2(955, 400)
 
 [node name="Gem3" parent="." instance=ExtResource("10_50hfi")]
-position = Vector2(66, 416)
+position = Vector2(920, 392)
 
 [node name="Mobs" type="Node2D" parent="."]
 
