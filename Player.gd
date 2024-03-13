@@ -52,18 +52,22 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://main.tscn")
+		
+		#var simultaneous_scene = preload("res://main.tscn").instantiate()
+		#get_tree().root.add_child(simultaneous_scene)
+	if $SugarRush.visible:
+		modulateSugarRushLabel(delta)
 	
 	if Game.PlayerHp <= 0 || position.y > LOWER_LIMIT:
 		playerDeath()
 	else: 
-		move_and_slide()
-		
-	if $SugarRush.visible:
-		modulateSugarRushLabel(delta)
+		move_and_slide()		
+	
 		
 func playerDeath():	
 	anim.play("Death")
 	velocity.y = JUMP_VELOCITY
+	await anim.animation_finished
 	get_tree().change_scene_to_file("res://game_over.tscn")
 	
 func speedBoost():	

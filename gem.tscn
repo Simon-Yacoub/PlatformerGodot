@@ -1,24 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://0rm2x5c2yfhe"]
 
 [ext_resource type="Texture2D" uid="uid://bsnm7xgk7ruxi" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-1.png" id="1_bmcvf"]
+[ext_resource type="Script" path="res://gem.gd" id="1_xymgq"]
 [ext_resource type="Texture2D" uid="uid://b471ydamwdfcr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-2.png" id="2_l3c3m"]
 [ext_resource type="Texture2D" uid="uid://d2x476bfm86tr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-3.png" id="3_cami3"]
 [ext_resource type="Texture2D" uid="uid://ntum6yna8u20" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-4.png" id="4_l2nn3"]
 [ext_resource type="Texture2D" uid="uid://bihb2i2v3gra7" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/gem/gem-5.png" id="5_wx0pj"]
-
-[sub_resource type="GDScript" id="GDScript_ct6i5"]
-script/source = "extends Area2D
-
-func _ready():
-	get_node(\"AnimatedSprite2D\").play(\"Idle\")
-
-func _on_body_entered(body):
-	if body.name == \"Player\":
-		Game.Gems += 1
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, \"modulate:a\", 0, 0.3)
-		tween.tween_callback(queue_free)
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7p4m"]
 radius = 8.0
@@ -47,7 +34,7 @@ animations = [{
 }]
 
 [node name="Gem" type="Area2D"]
-script = SubResource("GDScript_ct6i5")
+script = ExtResource("1_xymgq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c7p4m")

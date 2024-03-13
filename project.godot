@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Platformer"
+config/name="Foxy Runner"
+config/description="A platforming game"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Resources/acorn.png"
 
 [autoload]
 
-Game="*res://Global/Game.gd"
-Utils="*res://Global/Utils.gd"
+Game="*res://Game.gd"
+Utils="*res://Utils.gd"
 
 [input]
 

@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_c8gl6")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -110,9 +110,7 @@ shape = SubResource("RectangleShape2D_cehky")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_xq0x7")
-animation = &"death"
-frame = 5
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="PlayerCollision" type="Area2D" parent="Boss"]
 visible = false

@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var SPEED = 30
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var player
 var count = 0
 var patrol = 250
 var notDead = true

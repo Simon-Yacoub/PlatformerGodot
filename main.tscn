@@ -7,40 +7,61 @@
 script = ExtResource("1_qugje")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 399.0
-offset_top = 80.0
-offset_right = 744.0
-offset_bottom = 295.0
+offset_left = 432.0
+offset_top = 232.0
+offset_right = 712.0
+offset_bottom = 336.0
 text = "Play"
 
 [node name="LevelSelect" type="Button" parent="."]
-offset_left = 398.0
-offset_top = 312.0
-offset_right = 742.0
-offset_bottom = 419.0
+offset_left = 432.0
+offset_top = 352.0
+offset_right = 712.0
+offset_bottom = 448.0
 text = "Level Select"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 395.0
-offset_top = 450.0
-offset_right = 742.0
-offset_bottom = 597.0
+offset_left = 40.0
+offset_top = 536.0
+offset_right = 200.0
+offset_bottom = 619.0
 tooltip_text = "This is the quit button
 "
 text = "Quit"
 
 [node name="Back" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(571, 325)
-scale = Vector2(2.97917, 2.675)
+position = Vector2(576, 328)
+scale = Vector2(3.01042, 2.70417)
 texture = ExtResource("2_1w7hi")
 
 [node name="Record Book" type="Button" parent="."]
-offset_left = 845.0
-offset_top = 440.0
-offset_right = 1051.0
-offset_bottom = 604.0
+offset_left = 432.0
+offset_top = 472.0
+offset_right = 712.0
+offset_bottom = 576.0
 text = "Record Book"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 56.0
+offset_right = 864.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0.729412, 0.290196, 0.184314, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Foxy Runner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 656.0
+offset_top = 608.0
+offset_right = 1142.0
+offset_bottom = 696.0
+theme_override_font_sizes/font_size = 22
+text = "Note: Press \"ESC\" to return to the main menu"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]

@@ -1,33 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://df5hd1mi270i6"]
 
-[ext_resource type="Texture2D" uid="uid://dgae2l4hf63v6" path="res://Resources/orange.png" id="1_ax6v3"]
-
-[sub_resource type="GDScript" id="GDScript_lq65a"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_area_2d_body_entered(body):
-	if body.name == \"Player\":
-		body.speedBoost()
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, \"modulate:a\", 0, 0.3)
-		tween.tween_callback(queue_free)	
-"
+[ext_resource type="Texture2D" uid="uid://bmt3g5vhjt85s" path="res://Resources/orange.png" id="1_ax6v3"]
+[ext_resource type="Script" path="res://Collectables/Orange.gd" id="1_is4wh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0a1e"]
 
 [node name="Orange" type="Node2D"]
-script = SubResource("GDScript_lq65a")
+script = ExtResource("1_is4wh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
